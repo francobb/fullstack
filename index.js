@@ -1,13 +1,35 @@
 const express = require('express');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const clientId = require('./client_id').web.client_id;
+const clientSecret = require('./client_id').web.client_secret;
+
 const app = express();
 
+passport.use(
+	new GoogleStrategy(
+		{
+			clientID: clientId,
+			clientSecret: clientSecret,
+			callbackURL: '/auth/google/callback'
+		},
+		(accessToken, refreshToken, profile, done) => {
+			console.log(accessToken);
+			console.log(refreshToken);
+			console.log(profile);
+			// done();
+		}
+	)
+);
 
-app.get('/', (req, res) => {
-	res.send({ bye: 'buddy' });
-});
+app.get(
+	'/auth/google',
+	passport.authenticate('google', {
+		scope: ['profile', 'email']
+	})
+);
 
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 const PORT = process.env.PORT || 5000;
-
-
 app.listen(PORT);
