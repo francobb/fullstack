@@ -1,4 +1,4 @@
-if (node.process.ENV === 'production') {
+if (process.ENV === 'production') {
 	module.exports = require('./prod');
 } else {
 	module.exports = require('./dev');
