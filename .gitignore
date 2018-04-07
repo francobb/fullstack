@@ -1,4 +1,4 @@
 /package-lock.json
 /node_modules/
 /client_id.json
-#config/dev.js
+config/dev.js
