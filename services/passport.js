@@ -22,7 +22,7 @@ passport.use(
 		{
 			clientID: clientId,
 			clientSecret: clientSecret,
-			callbackURL: 'https://shrouded-retreat-50289.herokuapp.com/auth/google/callback',
+			callbackURL: '/auth/google/callback',
 			proxy: true
 		},
 		(accessToken, refreshToken, profile, done) => {
