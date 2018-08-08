@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
-import Header from './Header';
-import Landing from './Landing';
+import Header from "./Header";
+import Landing from "./Landing";
+import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/SurveyNew";
 
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
 /**
  * Steps
  *
@@ -19,26 +19,26 @@ const SurveyNew = () => <h2>SurveyNew</h2>;
  * 5: authReducer is responsible for figuring out to change the state whether or not a user is logged in or not with 'current_user'
  */
 
-
 class App extends Component {
-	componentDidMount() {
-		this.props.fetchUser();
-	}
+  componentDidMount() {
+    this.props.fetchUser();
+  }
 
-	render() {
-		return(
-			<div className={'container'}>
-				<BrowserRouter>
-					<div>
-						<Header/>
-						<Route exact path={'/'} component={Landing} />
-						<Route exact path={'/surveys'} component={Dashboard} />
-						<Route path={'/surveys/new'} component={SurveyNew} />
-					</div>
-				</BrowserRouter>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <BrowserRouter>
+        <div className={"container"}>
+          <Header />
+          <Route exact path={"/"} component={Landing} />
+          <Route exact path={"/surveys"} component={Dashboard} />
+          <Route path={"/surveys/new"} component={SurveyNew} />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
