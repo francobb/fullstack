@@ -4,8 +4,6 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-const { createLogger, format, transports, loggers } = require('winston');
-const { combine, timestamp, label, printf, colorize, json } = format;
 require('./models/User');
 require('./models/Survey');
 require('./services/passport');
@@ -41,59 +39,6 @@ if (process.env.NODE_ENV === 'production'){
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
 }
-
-
-
-/*  set interval method that logs messages to the console */
-const ignorePrivate = format((info, opts) => {
-	if (info.private) { return false; }
-	return info;
-});
-
-const myFormat = printf(info => {
-	return `${info.timestamp} [${info.label}] ${info.level}: ${info.message}`;
-});
-// const surveyLogger = createLogger({
-// 	level: 'debug',
-// 	// format: format.simple(),
-// 	// format: format.json(),
-// 	format: combine(
-// 		ignorePrivate(),
-// 		label({ label: 'debug logger' }),
-// 		colorize(),
-// 		timestamp({
-// 			format: 'YYYY-MM-DD HH:mm:ss'
-// 		}),
-// 		myFormat
-// 		// format.simple()
-// 	),
-// 	transports: [new transports.Console()]
-// });
-// const infoLevelLogger = createLogger({
-// 	level: 'info',
-// 	// format: json(),
-// 	format: combine(
-// 		label({ label: 'info logger' }),
-// 		timestamp({
-// 			format: 'YYYY-MM-DD HH:mm:ss'
-// 		}),
-// 		colorize(),
-// 		myFormat
-// 	),
-// 	transports: [new transports.Console()]
-// });
-// setInterval(() => {
-// 	infoLevelLogger.info('this is the info logger');
-// 	// console.log('\n');
-// 	surveyLogger.debug('this is the debug logger');
-// 	// surveyLogger.error('Error info');
-// 	// surveyLogger.warn('Warning info');
-// 	surveyLogger.log({
-// 		level: 'error',
-// 		message: 'This is a Private error',
-// 		private: true,
-// 	});
-// }, 5000);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
