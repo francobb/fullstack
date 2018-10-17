@@ -1,4 +1,5 @@
 const passport = require('passport');
+const {authLogger} = require('../utils/logger');
 
 module.exports = app => {
 
@@ -18,6 +19,7 @@ module.exports = app => {
 	);
 
 	app.get('/api/logout', (req, res) => {
+		authLogger.info(`${req.user.id} has logged out.`);
 		req.logout();
 		res.redirect('/');
 	});

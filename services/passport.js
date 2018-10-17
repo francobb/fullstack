@@ -3,6 +3,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const clientId = require('../config/keys').clientId;
 const clientSecret = require('../config/keys').clientSecret;
 const mongoose = require('mongoose');
+const {authLogger} = require('../utils/logger');
 
 const User = mongoose.model('users'); // pulls schema from mongoose
 
@@ -29,7 +30,7 @@ passport.use(
 			const existingUser = await User.findOne({ googleId: profile.id });
 
 			if (existingUser) {
-
+				authLogger.info(`${existingUser._id} has logged in.`);
 				done(null, existingUser);
 			} else {
 
