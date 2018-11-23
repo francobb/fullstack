@@ -1,6 +1,6 @@
 module.exports = [
 	{
-		Vendor: "Summit",
+		name: "Summit",
 		Strains: [
 			{
 			Strain: "Van Island Haze",
@@ -48,6 +48,12 @@ module.exports = [
 			}
 		]
 	},
-	{Vendor: "Slater"},
-	{Vendor: "GreenLeaf"}
+	{
+		name: "Slater",
+		strains: []
+	},
+	{
+		name: "GreenLeaf",
+		strains: []
+	}
 ];

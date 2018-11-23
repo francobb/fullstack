@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import VendorList from './VendorList';
 
-// TODO: add vendorlist component that lists the 3 vendors options
 const Dashboard = () => {
 	return (
 		<div>
-			{"This is the other dashboard"}
+			<VendorList />
 		</div>
 	);
 };
 
-export default connect(null, )(Dashboard);
+export default connect(null, actions)(Dashboard);
