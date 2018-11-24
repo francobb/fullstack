@@ -1,49 +1,49 @@
 module.exports = [
 	{
 		name: "Summit",
-		Strains: [
+		strains: [
 			{
-			Strain: "Van Island Haze",
-			Quality: 20.68
-		},
+				name: "Van Island Haze",
+				Quality: 20.68
+			},
 			{
-				Strain: "Mimosa",
+				name: "Mimosa",
 				Quality: 19.42
 			},
 			{
-				Strain: "Afghoo",
+				name: "Afghoo",
 				Quality: 25.02
 			},
 			{
-				Strain: "Jr. Mint",
+				name: "Jr. Mint",
 				Quality: 21
 			},
 			{
-				Strain: "Quantum Kush",
+				name: "Quantum Kush",
 				Quality: 19.80
 			},
 			{
-				Strain: "Blue Dream",
+				name: "Blue Dream",
 				Quality: 17.20
 			},
 			{
-				Strain: "Fruit Pebbles OG",
+				name: "Fruit Pebbles OG",
 				Quality: 16
 			},
 			{
-				Strain: "Purple Wreck",
+				name: "Purple Wreck",
 				Quality: 20.63
 			},
 			{
-				Strain: "Motor Breath",
+				name: "Motor Breath",
 				Quality: 20.60
 			},
 			{
-				Strain: "Zombie Kush",
+				name: "Zombie Kush",
 				Quality: 17.52
 			},
 			{
-				Strain: "Sour Chiesel",
+				name: "Sour Chiesel",
 				Quality: 17.68
 			}
 		]
@@ -54,6 +54,57 @@ module.exports = [
 	},
 	{
 		name: "GreenLeaf",
-		strains: []
+		strains: [
+			{
+				name: "RIFG Wedding Cake",
+				quality: 22.70
+			},
+			{
+				name: "Timeout",
+				quality: 23.0
+			},
+			{
+				name: "Code Blue",
+				quality: 25.70
+			},
+			{
+				name: "RIFG Banana Cream",
+				quality: 21.00
+			},
+			{
+				name: "RIFG Purple Chem",
+				quality: 26.00
+			},
+			{
+				name: "Kimbo Kush",
+				quality: 25.70
+			},
+			{
+				name: "Layer Cake",
+				quality: 25
+			},
+			{
+				name: "Purple Frost",
+				quality: 23
+			},
+			{
+				name: "Mr Clean #1",
+				quality: 24
+			},
+			{
+				name: "Bruce Banner",
+				quality: 20
+			},
+			{
+				name: "Blue Mango",
+				quality: 18
+			},
+			{
+				name: "Charlotte's Web (CBD)",
+				quality: 0
+			},
+		
+		
+		]
 	}
 ];
