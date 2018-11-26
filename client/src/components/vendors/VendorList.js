@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchVendors } from '../../actions';
 import Vendor from './Vendor';
+import '../../styles/styles.css';
 
 class VendorList extends Component {
 	
@@ -13,13 +14,14 @@ class VendorList extends Component {
 	render() {
 		return _.map(this.props.vendors, ({name, strains}) => {
 			return(
-				<div>
-					<h1 key={name}>
-						{name}
-					</h1>
-					<Vendor strains={strains} name={name}/>
-				</div>
-			);
+				<ul className={"vendor_wrapper"} key={name}>
+					<li>
+						<h1>
+							{name}
+							</h1>
+						<Vendor strains={strains} name={name}/>
+					</li>
+				</ul>)
 		});
 	}
 	

@@ -1,0 +1,16 @@
+.vendor_wrapper {
+    overflow: auto;
+}
+.horizontal_scroll_wrapper {
+    display: inline-flex;
+}
+
+.horizontal_scroll_item {
+    display: inline-grid;
+    width: 300px;
+    margin: .5rem 1rem 1rem 1rem;
+}
+
+:vendor(.wrapper){
+
+}
