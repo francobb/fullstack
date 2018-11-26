@@ -1,6 +1,8 @@
+import _ from "lodash";
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchVendors } from '../../actions';
+import Vendor from './Vendor';
 
 class VendorList extends Component {
 	
@@ -8,24 +10,17 @@ class VendorList extends Component {
 		this.props.fetchVendors();
 	}
 	
-	// TODO: create the list that compiles the different vendors offerings
-	
-	renderVendors() {
-		return this.props.vendors.reverse().map(vendor => {
+	render() {
+		return _.map(this.props.vendors, ({name, strains}) => {
 			return(
 				<div>
-					{vendor.name}
+					<h1 key={name}>
+						{name}
+					</h1>
+					<Vendor strains={strains} name={name}/>
 				</div>
 			);
 		});
-	}
-	
-	render() {
-		return (
-			<div>
-				{this.renderVendors()}
-			</div>
-		);
 	}
 	
 }

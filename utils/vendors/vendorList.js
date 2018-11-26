@@ -50,7 +50,33 @@ module.exports = [
 	},
 	{
 		name: "Slater",
-		strains: []
+		strains: [
+			{
+				name: "Grateful Breath",
+				quality: 26.55
+			},
+			{
+				name: "Sherbert Cookies",
+				quality: 26.79
+			},
+			{
+				name: "Kush Dreams",
+				quality: 23.55
+			},
+			{
+				name: "Black Cherry Punch",
+				quality: 21.55
+			},
+			{
+				name: "American Dream",
+				quality: 26.41
+			},
+			{
+				name: "Cherry Hash",
+				quality: 21.90
+			},
+		
+		]
 	},
 	{
 		name: "GreenLeaf",
