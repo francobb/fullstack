@@ -9,7 +9,7 @@ class Header extends Component {
 			case null:
 				return;
 			case false:
-				return <li><a href={'/auth/google'}> Login with Google </a></li>;
+				return <li><a href={'/auth/strava'}> Login with Google </a></li>;
 			default:
 				return [
 					<li key={1}><Payments/></li>,
@@ -20,7 +20,6 @@ class Header extends Component {
 	}
 
 	render() {
-		console.log(this.props);
 		return(
 			<nav>
 				<div className={'nav-wrapper'}>
@@ -28,7 +27,7 @@ class Header extends Component {
 						to={this.props.auth ? '/surveys' : '/'}
 						className={'left brand-logo'}
 					>
-						Emaily
+						STRAVA
 					</Link>
 					<ul className={'right'}>
 						{this.renderContent()}
@@ -39,7 +38,7 @@ class Header extends Component {
 	}
 }
 
-function mapStateToProps({auth}){
+function mapStateToProps({auth}) {
 	return { auth };
 }
 export default connect(mapStateToProps)(Header);
