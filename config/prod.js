@@ -6,5 +6,8 @@ module.exports = {
 	stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
 	stripeSecretKey: process.env.STRIPE_SECRET_KEY,
 	sendGridKey: process.env.SEND_GRID_KEY,
-	redirectDomain: 'https://shrouded-retreat-50289.herokuapp.com/'
+	redirectDomain: 'https://shrouded-retreat-50289.herokuapp.com/',
+	stravaClientId: process.env.STRAVA_CLIENT_ID,
+	stravaClientSecret: process.env.STRAVA_CLIENT_SECRET,
+	callbackURL: '/auth/strava/callback'
 };
